@@ -1,6 +1,7 @@
-# include <iostream>
-# include <fstream>
-# include <string>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <stdlib.h>
 class Archivos
 {
 public:
@@ -8,9 +9,9 @@ public:
 	std::string nombre;
 	void Menu();	
 	void crear();
-	void leer();
-	void escribir(std::string nombre);
-	void borrar();
+	void leer(std::string ruta);
+	void Escribir(std::string nombre);
+	void Borrar(std::string ruta);
 	//~Archivos();
 
 };
