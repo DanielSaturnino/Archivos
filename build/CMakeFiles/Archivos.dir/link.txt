@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/Archivos.dir/src/main.cpp.o CMakeFiles/Archivos.dir/src/Archivos.cpp.o  -o Archivos -rdynamic 

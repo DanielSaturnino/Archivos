@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Archivos.h
+iostream
+-
+fstream
+-
+
+/home/daniel/Documentos/Archivos/src/Archivos.cpp
+Archivos.h
+/home/daniel/Documentos/Archivos/src/Archivos.h
+
+/home/daniel/Documentos/Archivos/src/main.cpp
+Archivos.h
+/home/daniel/Documentos/Archivos/src/Archivos.h
+

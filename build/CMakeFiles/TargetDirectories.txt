@@ -1,0 +1,1 @@
+/home/daniel/Documentos/Archivos/build/CMakeFiles/Archivos.dir
