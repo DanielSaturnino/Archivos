@@ -2,6 +2,7 @@
 using namespace std;
 void Archivos::Menu()
 {
+	char espera;
 	std::string nombre;
 	cout<<"HOLA BIENVENIDO QUE DESEAS HACER"<<endl;
 	do{
@@ -21,7 +22,7 @@ void Archivos::Menu()
 		std::cout<<"Dame la ruta de del archivo: "<<std::endl;
 		cin>>nombre;
 		leer(nombre);
-		system("pause");
+		cin>>espera;
 		break;
 		case 3:
 	
@@ -30,7 +31,7 @@ void Archivos::Menu()
 		std::cout<<"Dame la ruta de del archivo: "<<std::endl;
 		cin>>nombre;
 		Borrar(nombre);
-		system("pause");
+		cin>>espera;
 		break;
 		}
 	}while(op!=5);
