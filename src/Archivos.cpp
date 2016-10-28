@@ -5,7 +5,6 @@ void Archivos::Menu()
 	std::string nombre;
 	cout<<"HOLA BIENVENIDO QUE DESEAS HACER"<<endl;
 	do{
-	system("clear");
 	cout<<"\n 1 Escribir  \n 2 Leer \n 3 Crear \n 4 Borrar \n 5 Salir"<<endl;
 	cout<<"Elija: "<<endl;
 	cin>> op;
@@ -15,7 +14,7 @@ void Archivos::Menu()
 		cout<<"Escribe el nombre del archivo: "<<endl;
 		cin>>nombre;
 		Escribir(nombre);
-
+		system("pause");
 		break;
 		case 2:
 		std::cout<<"Dame la ruta de del archivo: "<<std::endl;
@@ -40,21 +39,13 @@ void Archivos::Menu()
 }
 void Archivos::Escribir(std::string ruta)
 {
-	std::ifstream archivo;
-	archivo.open(ruta.c_str());
-	//cout<<fstream a(nombre.c_str(),fstream::in)<<endl;
+	leer(ruta);
+	std::ofstream escr(ruta.c_str());
 	std::string line;
-	while(archivo.eof())
-	{
-		archivo>> line;
-		std::cout<<line<<std::endl;
-	}
-	archivo.close();
-	ofstream a(nombre.c_str(),fstream::app);
-	std::string line2;
-	a<<line2<<endl;
-	a.close();
-
+	std::cout<<"Escriba"<<std::endl;
+	std::cin>>line;
+	escr<<line<<endl;
+	escr.close();
 }
 void Archivos::leer(std::string ruta){
 	std::ifstream lee(ruta.c_str());
@@ -74,7 +65,7 @@ system(comando.c_str());
 void  Archivos::Crear(std::string ruta)
 {
 	 std::string com;
-	 com = "touch" + ruta;
+	 com = "touch " + ruta;
 	 system(com.c_str());
 	 
 }
