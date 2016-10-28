@@ -1,7 +1,14 @@
+/**
+Nombres: Manzano Saturnino Daniel
+		 Mayett Guzman Rodrigo
+Descripcion:
+Este programa se encarga de generar archivos, leerlos, ediatrlos y eliminarlos
+*/
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <stdlib.h>
+#include <cstring>
 class Archivos
 {
 public:

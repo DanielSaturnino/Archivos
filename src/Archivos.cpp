@@ -1,3 +1,6 @@
+/*Nombres: Manzano Saturnino Daniel
+		 Mayett Guzman Rodrigo
+*/
 # include "Archivos.h"
 using namespace std;
 void Archivos::Menu()
@@ -40,12 +43,18 @@ void Archivos::Menu()
 void Archivos::Escribir(std::string ruta)
 {
 	leer(ruta);
-	std::ofstream escr(ruta.c_str());
-	std::string line;
-	std::cout<<"Escriba"<<std::endl;
-	std::cin>>line;
-	escr<<line<<endl;
-	escr.close();
+	char nombre[1000];
+	for (int i = 0; i < ruta.length(); ++i)//recorremoss el string
+	{
+		nombre[i]=ruta.at(i);//cachamos cada caracter
+	}
+		FILE *archivoAux;
+		archivoAux=fopen(nombre,"a+");
+		char palabras[10000];
+		std::cin>>palabras;
+		fgets(palabras, 10000, stdin);
+		fputs(palabras, archivoAux);//escribe la cadena en la ultima linea
+		fclose(archivoAux);
 }
 void Archivos::leer(std::string ruta){
 	std::ifstream lee(ruta.c_str());
@@ -58,14 +67,14 @@ void Archivos::leer(std::string ruta){
 }
 void Archivos::Borrar(std::string ruta){
 std::string comando;
-comando = "rm " + ruta;
+comando = "rm " + ruta;// para elminar desde consola le concatenamos el archivo
 system(comando.c_str());
 }
 
 void  Archivos::Crear(std::string ruta)
 {
 	 std::string com;
-	 com = "touch " + ruta;
+	 com = "touch " + ruta;// lo mismo para eliminar pero para crear
 	 system(com.c_str());
 	 
 }
