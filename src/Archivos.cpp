@@ -24,7 +24,10 @@ void Archivos::Menu()
 		system("pause");
 		break;
 		case 3:
-	
+		std::cout<<"Dame la ruta de del archivo: "<<std::endl;
+		cin>>nombre;
+		Crear(nombre);
+		system("pause");
 		break;
 		case 4:
 		std::cout<<"Dame la ruta de del archivo: "<<std::endl;
@@ -35,13 +38,23 @@ void Archivos::Menu()
 		}
 	}while(op!=5);
 }
-void Archivos::Escribir(string nombre)
+void Archivos::Escribir(std::string ruta)
 {
-	ofstream archivo;
-	archivo.open(nombre.c_str());
+	std::ifstream archivo;
+	archivo.open(ruta.c_str());
 	//cout<<fstream a(nombre.c_str(),fstream::in)<<endl;
+	std::string line;
+	while(archivo.eof())
+	{
+		archivo>> line;
+		std::cout<<line<<std::endl;
+	}
 	archivo.close();
-	ifstream a(nombre.c_str(),fstream::app);
+	ofstream a(nombre.c_str(),fstream::app);
+	std::string line2;
+	a<<line2<<endl;
+	a.close();
+
 }
 void Archivos::leer(std::string ruta){
 	std::ifstream lee(ruta.c_str());
@@ -56,4 +69,12 @@ void Archivos::Borrar(std::string ruta){
 std::string comando;
 comando = "rm " + ruta;
 system(comando.c_str());
+}
+
+void  Archivos::Crear(std::string ruta)
+{
+	 std::string com;
+	 com = "touch" + ruta;
+	 system(com.c_str());
+	 
 }

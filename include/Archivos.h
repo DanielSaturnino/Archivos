@@ -8,9 +8,9 @@ public:
 	int op;
 	std::string nombre;
 	void Menu();	
-	void crear();
+	void Crear(std::string ruta);
 	void leer(std::string ruta);
-	void Escribir(std::string nombre);
+	void Escribir(std::string ruta);
 	void Borrar(std::string ruta);
 	//~Archivos();
 
